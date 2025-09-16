@@ -1,0 +1,18 @@
+.services-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: .125rem solid #ccc;
+  border-radius: .75rem;
+  background: #f9f9f9;
+  max-width: 90%;
+  margin: auto;
+}
+
+/* Make it 1 column on smaller screens */
+@media (max-width: 600px) {
+  .services-box {
+    grid-template-columns: 1fr;
+  }
+}

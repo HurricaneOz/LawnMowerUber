@@ -1,0 +1,29 @@
+.home-container{
+    background-color: #99df9c;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 10rem;
+  margin-top: 2rem;
+}
+
+.service-button {
+    padding: 2rem 4rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10rem;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    transition: background 0.3s ease;
+
+}
+
+.service-button:hover {
+    background-color: #45a049;
+}

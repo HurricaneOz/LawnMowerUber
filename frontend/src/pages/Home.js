@@ -1,10 +1,29 @@
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import "./Home.css";
 
-export function Home() {
+export default function Home() {
+  const navigate = useNavigate();
+
   return (
-    <div>
-        <Navbar></Navbar>
-        <h1>Home Page</h1>
+    <div className="home-container">
+      <Navbar />
+      <div className="button-group">
+        <button
+          type="button"
+          className="service-button"
+          onClick={() => navigate("/Services")}
+        >
+          Promote Service
+        </button>
+        <button
+          type="button"
+          className="service-button"
+          onClick={() => navigate("/Hire")}
+        >
+          Hire Service
+        </button>
+      </div>
     </div>
   );
 }

@@ -12,7 +12,7 @@ export default function Home() {
         <button
           type="button"
           className="service-button"
-          onClick={() => navigate("/Services")}
+          onClick={() => navigate("/Promote")}
         >
           Promote Service
         </button>

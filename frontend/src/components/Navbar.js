@@ -1,4 +1,3 @@
-import React from 'react';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -10,6 +9,7 @@ export default function Navbar() {
         <li><a href="/Services">Services</a></li>
         <li><a href="/About">About</a></li>
         <li><a href="/Contact">Contact</a></li>
+        <li><a href="/Login">Login</a></li>
       </ul>
     </nav>
   );

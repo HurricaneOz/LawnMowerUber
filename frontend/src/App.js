@@ -5,6 +5,8 @@ import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import Services from './pages/Services';
 import Hire from './pages/Hire';
+import Promote from './pages/Promote';
+import Login from './pages/Login';
 
 function App() {
   return(
@@ -16,6 +18,8 @@ function App() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/Hire" element={<Hire />} />
+        <Route path="/Promote" element={<Promote />} />
+        <Route path="/Login" element={<Login />} />
         <Route path = "*" element = { <Home /> }/>
       </Routes>
     </BrowserRouter>

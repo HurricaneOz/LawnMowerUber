@@ -1,15 +1,27 @@
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
+  
+  const navItems = [
+    { path: "/Services", label: "Services" },
+    { path: "/Promote", label: "Promote" },
+    { path: "/About", label: "About" },
+    { path: "/Contact", label: "Contact" },
+    { path: "/Login", label: "Login" },
+  ];
+
   return (
     <nav className="navbar">
-      <div className="navbar-logo">YardCare Services</div>
+      <div className="navbar-logo">
+        <Link to="/Home">HSF</Link>
+      </div>
       <ul className="navbar-links">
-        <li><a href="/Home">Home</a></li>
-        <li><a href="/Services">Services</a></li>
-        <li><a href="/About">About</a></li>
-        <li><a href="/Contact">Contact</a></li>
-        <li><a href="/Login">Login</a></li>
+        {navItems.map((item) => (
+          <li key={item.path}>
+            <Link to={item.path}>{item.label}</Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

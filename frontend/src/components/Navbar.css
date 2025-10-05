@@ -7,13 +7,27 @@
   box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 1000;
 }
 
-.navbar-logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #2f855a;
+.navbar-logo{
+  list-style: none;
+  font-family: 'Stencil', cursive;
+  font-size: 3rem;         
+  font-weight: 700;       
+  color: #2f855a;          
+  letter-spacing: 1px;     
+  text-transform: uppercase; 
+  cursor: pointer;
+}
+
+.navbar-logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-logo:hover {
+  color: #276749;        
+  transform: scale(1.05);  
 }
 
 .navbar-links {
@@ -28,9 +42,9 @@
   text-decoration: none;
   color: #333333;
   font-weight: 500;
-  transition: color 0.2s ease-in-out;
 }
 
 .navbar-links li a:hover {
   color: #2f855a;
+  transform: scale(1.5);  
 }

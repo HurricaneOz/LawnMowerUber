@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import ServiceItem from "../components/ServiceItem";
 import "./Services.css";
 
 
@@ -9,11 +8,7 @@ export default function Services() {
     return (
         <div className = "services-page">
             <Navbar></Navbar>
-            <div className = "services-box">
-                {services.map((service, index) => (
-                    <ServiceItem key={index} name={service} />
-                ))}
-            </div>
+            <h1>Our Services</h1>
         </div>
     );
 }

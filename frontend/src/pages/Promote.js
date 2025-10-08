@@ -1,15 +1,25 @@
 import React, { useEffect, useState } from "react";
-import FullCalendar from "@fullcalendar/react";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction";
-import Navbar from "../components/Navbar";
+import Bacckbutton from "../components/Backbutton";
+import ProviderForm from "../components/ProviderForm";
 import "./Promote.css";
 
 export default function Promote() {
+  const [currentUser, setCurrentUser] = useState("");
+
+  useEffect(() => {
+    const user = localStorage.getItem("currentUser");
+    if (user) setCurrentUser(user);
+  }, []);
+
   return (
-    <div>
-        <Navbar></Navbar>
-        <h1>Promomte Page</h1>
+    <div className="promote-page">
+      <Bacckbutton />
+      {currentUser && (
+        <div className="promote-page__user">
+          Signed in as: <strong>{currentUser}</strong>
+        </div>
+      )}
+      <ProviderForm />
     </div>
   );
 }

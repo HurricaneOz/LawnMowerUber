@@ -1,0 +1,104 @@
+/* ========== Provider Form Styles ========== */
+
+/* Container */
+.provider-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 420px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Title */
+.provider-form__title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Labels */
+.provider-form__label {
+  font-weight: 500;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* Inputs & Selects */
+.provider-form__input,
+.provider-form__select {
+  padding: 0.7rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Focus effect */
+.provider-form__input:focus,
+.provider-form__select:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.15);
+  outline: none;
+}
+
+/* Submit button */
+.provider-form__button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.provider-form__button:hover {
+  background-color: #43a047;
+}
+
+.provider-form__button:active {
+  transform: scale(0.98);
+}
+
+/* Adjust react-select to match our form */
+.provider-select__control {
+  border-radius: 8px !important;
+  border: 1px solid #ccc !important;
+  padding: 0.1rem !important;
+}
+
+.provider-select__multi-value {
+  background-color: #4caf50 !important;
+  color: white !important;
+}
+
+.provider-select__multi-value__label {
+  color: white !important;
+}
+
+.provider-select__multi-value__remove {
+  color: white !important;
+  cursor: pointer;
+}
+
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .provider-form {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .provider-form__title {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,14 @@
+.promote-page {
+  position: relative;
+  padding: 2rem;
+}
+
+/* User info on top-right */
+.promote-page__user {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}

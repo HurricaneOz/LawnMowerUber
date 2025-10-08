@@ -1,0 +1,9 @@
+.back{
+    background-color: transparent;
+    border: none;
+    color: #ec4019;
+    cursor: pointer;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+}

@@ -1,34 +1,20 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ProfileMenu.css";
+import { UserContext } from "./UserContext";
 
 export default function ProfileMenu() {
-  const [currentUser, setCurrentUser] = useState("");
+  const { currentUser, logout } = useContext(UserContext);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const user = localStorage.getItem("currentUser");
-    if (user) setCurrentUser(user);
-
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
   const handleLogout = () => {
-    localStorage.removeItem("currentUser");
-    setCurrentUser("");
+    logout();
     navigate("/Home");
   };
 
-  if (!currentUser) return <a href="/Login">Login</a>;
+  if (!currentUser) return null;
 
   return (
     <div className="profile-menu" ref={menuRef}>
@@ -36,12 +22,14 @@ export default function ProfileMenu() {
         className="profile-icon"
         onClick={() => setMenuOpen((prev) => !prev)}
       >
-        👤{/*Use profile picture later on*/}
+        👤
       </button>
 
       {menuOpen && (
         <div className="dropdown">
-          <p className="dropdown-user">Signed in as <b>{currentUser}</b></p>
+          <p className="dropdown-user">
+            Signed in as <b>{currentUser}</b>
+          </p>
           <hr />
           <button
             onClick={() => navigate("/Promote")}
@@ -49,10 +37,7 @@ export default function ProfileMenu() {
           >
             My Profile
           </button>
-          <button
-            onClick={handleLogout}
-            className="dropdown-item logout"
-          >
+          <button onClick={handleLogout} className="dropdown-item logout">
             Logout
           </button>
         </div>

@@ -1,16 +1,11 @@
 import './Navbar.css';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import ProfileMenu from './ProfileMenu';
+import { useContext } from 'react';
+import { UserContext } from './UserContext';
 
 export default function Navbar() {
-  const [currentUser, setCurrentUser] = useState(null);
-
-  //get from backend later
-  useEffect(() => {
-    const storedUser = localStorage.getItem('currentUser');
-    if (storedUser) setCurrentUser(storedUser);
-  }, []);
+  const { currentUser } = useContext(UserContext);
 
   const navItems = [
     { path: "/Services", label: "Services" },
@@ -32,16 +27,14 @@ export default function Navbar() {
           </li>
         ))}
 
-        {/* Show login if not logged in */}
         {!currentUser && (
           <li>
             <Link to="/Login">Login</Link>
           </li>
         )}
 
-        {/* Show profile menu if logged in */}
         {currentUser && (
-          <li className = "navbar-profile-menu">
+          <li className="navbar-profile-menu">
             <ProfileMenu />
           </li>
         )}

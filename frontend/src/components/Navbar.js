@@ -8,16 +8,16 @@ export default function Navbar() {
   const { currentUser } = useContext(UserContext);
 
   const navItems = [
-    { path: "/Services", label: "Services" },
-    { path: "/Promote", label: "Promote" },
-    { path: "/About", label: "About" },
-    { path: "/Contact", label: "Contact" },
+    { path: "/services", label: "Services" },
+    { path: "/promote", label: "Promote" },
+    { path: "/about", label: "About" },
+    { path: "/contact", label: "Contact" },
   ];
 
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/Home">HSF</Link>
+        <Link to="/home">HSF</Link>
       </div>
 
       <ul className="navbar-links">
@@ -29,7 +29,7 @@ export default function Navbar() {
 
         {!currentUser && (
           <li>
-            <Link to="/Login">Login</Link>
+            <Link to="/login">Login</Link>
           </li>
         )}
 

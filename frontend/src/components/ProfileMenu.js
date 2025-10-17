@@ -11,7 +11,7 @@ export default function ProfileMenu() {
 
   const handleLogout = () => {
     logout();
-    navigate("/Home");
+    navigate("/home");
   };
 
   if (!currentUser) return null;
@@ -32,7 +32,7 @@ export default function ProfileMenu() {
           </p>
           <hr />
           <button
-            onClick={() => navigate("/Promote")}
+            onClick={() => navigate("/promote")}
             className="dropdown-item"
           >
             My Profile

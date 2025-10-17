@@ -20,7 +20,7 @@ export default function Promote() {
           </div>
         )}
         {!currentUser && (
-          <button className = "login_button" onClick={() => navigate('/Login')}>
+          <button className = "login_button" onClick={() => navigate('/login')}>
             Login
           </button>
         )}

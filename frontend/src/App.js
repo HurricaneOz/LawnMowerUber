@@ -7,6 +7,7 @@ import Services from './pages/Services';
 import Promote from './pages/Promote';
 import Login from './pages/Login';
 import { UserProvider } from './components/UserContext';
+import ServiceDetail from './pages/ServicePage';
 
 function App() {
   return(
@@ -15,14 +16,15 @@ function App() {
         <Routes>
           {/*static routes*/}
           <Route path="/" element={<Home />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/Services" element={<Services />} />
-          <Route path="/Promote" element={<Promote />} />
-          <Route path="/Login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/promote" element={<Promote />} />
+          <Route path="/login" element={<Login />} />
           {/*dynamic route for services*/}
           <Route path = "*" element = { <Home /> }/>
+          <Route path="/service/:serviceName" element={<ServiceDetail />} />
         </Routes>
       </BrowserRouter>
     </UserProvider>

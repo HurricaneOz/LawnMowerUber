@@ -28,7 +28,7 @@ export default function Login() {
     } else {
       if (users[username] && users[username] === password) {
         login(username); // updates global context
-        navigate('/Home');
+        navigate('/home');
       } else {
         setError('Invalid username or password');
       }
